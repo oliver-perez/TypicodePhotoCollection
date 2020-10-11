@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C047862224A2EFDEB6DEDDF /* Pods_TypicodePhotoCollection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2256A75124384FA33DEC0F10 /* Pods_TypicodePhotoCollection.framework */; };
 		AC3D83DE253374430050A995 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D83DD253374430050A995 /* AppDelegate.swift */; };
 		AC3D83E0253374430050A995 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D83DF253374430050A995 /* SceneDelegate.swift */; };
 		AC3D83E2253374430050A995 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D83E1253374430050A995 /* ViewController.swift */; };
@@ -35,6 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		033835BEBB9FAAE07C5A885B /* Pods-TypicodePhotoCollection.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TypicodePhotoCollection.debug.xcconfig"; path = "Target Support Files/Pods-TypicodePhotoCollection/Pods-TypicodePhotoCollection.debug.xcconfig"; sourceTree = "<group>"; };
+		2256A75124384FA33DEC0F10 /* Pods_TypicodePhotoCollection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TypicodePhotoCollection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7656737B97CAB9217960EF6D /* Pods-TypicodePhotoCollection.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TypicodePhotoCollection.release.xcconfig"; path = "Target Support Files/Pods-TypicodePhotoCollection/Pods-TypicodePhotoCollection.release.xcconfig"; sourceTree = "<group>"; };
 		AC3D83DA253374430050A995 /* TypicodePhotoCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TypicodePhotoCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC3D83DD253374430050A995 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC3D83DF253374430050A995 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C047862224A2EFDEB6DEDDF /* Pods_TypicodePhotoCollection.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +81,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		695CD87D64BBF4AFC2672D48 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2256A75124384FA33DEC0F10 /* Pods_TypicodePhotoCollection.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AC3D83D1253374430050A995 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +96,8 @@
 				AC3D83F3253374460050A995 /* TypicodePhotoCollectionTests */,
 				AC3D83FE253374460050A995 /* TypicodePhotoCollectionUITests */,
 				AC3D83DB253374430050A995 /* Products */,
+				C9BC6BCFF31A5A3AE5D8EC3F /* Pods */,
+				695CD87D64BBF4AFC2672D48 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +143,16 @@
 			path = TypicodePhotoCollectionUITests;
 			sourceTree = "<group>";
 		};
+		C9BC6BCFF31A5A3AE5D8EC3F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				033835BEBB9FAAE07C5A885B /* Pods-TypicodePhotoCollection.debug.xcconfig */,
+				7656737B97CAB9217960EF6D /* Pods-TypicodePhotoCollection.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +160,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AC3D8404253374460050A995 /* Build configuration list for PBXNativeTarget "TypicodePhotoCollection" */;
 			buildPhases = (
+				132A319819429E18A1E14645 /* [CP] Check Pods Manifest.lock */,
 				AC3D83D6253374430050A995 /* Sources */,
 				AC3D83D7253374430050A995 /* Frameworks */,
 				AC3D83D8253374430050A995 /* Resources */,
+				A8975CFC429A26F11720869E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -252,6 +279,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		132A319819429E18A1E14645 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TypicodePhotoCollection-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A8975CFC429A26F11720869E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TypicodePhotoCollection/Pods-TypicodePhotoCollection-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TypicodePhotoCollection/Pods-TypicodePhotoCollection-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TypicodePhotoCollection/Pods-TypicodePhotoCollection-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AC3D83D6253374430050A995 /* Sources */ = {
@@ -433,6 +502,7 @@
 		};
 		AC3D8405253374460050A995 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 033835BEBB9FAAE07C5A885B /* Pods-TypicodePhotoCollection.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -452,6 +522,7 @@
 		};
 		AC3D8406253374460050A995 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7656737B97CAB9217960EF6D /* Pods-TypicodePhotoCollection.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
