@@ -15,6 +15,10 @@
 		AC3D83F5253374460050A995 /* TypicodePhotoCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D83F4253374460050A995 /* TypicodePhotoCollectionTests.swift */; };
 		AC3D8400253374460050A995 /* TypicodePhotoCollectionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D83FF253374460050A995 /* TypicodePhotoCollectionUITests.swift */; };
 		AC3D8428253379140050A995 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D8427253379130050A995 /* MainCoordinator.swift */; };
+		AC3D84372533828A0050A995 /* AlbumCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D84362533828A0050A995 /* AlbumCollectionViewController.swift */; };
+		AC3D8443253382D80050A995 /* AlbumCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D8442253382D80050A995 /* AlbumCollectionViewModel.swift */; };
+		AC3D844C2533834F0050A995 /* PhotoDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D844B2533834F0050A995 /* PhotoDetail.swift */; };
+		AC3D8454253384B90050A995 /* AlbumCollectionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D8453253384B90050A995 /* AlbumCollectionProtocols.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,10 @@
 		AC3D83FF253374460050A995 /* TypicodePhotoCollectionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypicodePhotoCollectionUITests.swift; sourceTree = "<group>"; };
 		AC3D8401253374460050A995 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC3D8427253379130050A995 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		AC3D84362533828A0050A995 /* AlbumCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewController.swift; sourceTree = "<group>"; };
+		AC3D8442253382D80050A995 /* AlbumCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewModel.swift; sourceTree = "<group>"; };
+		AC3D844B2533834F0050A995 /* PhotoDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetail.swift; sourceTree = "<group>"; };
+		AC3D8453253384B90050A995 /* AlbumCollectionProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionProtocols.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +122,7 @@
 			children = (
 				AC3D841F253378860050A995 /* App */,
 				AC3D841E253378750050A995 /* MainCoordinator */,
+				AC3D84352533825E0050A995 /* AlbumCollection */,
 			);
 			path = TypicodePhotoCollection;
 			sourceTree = "<group>";
@@ -154,6 +163,49 @@
 				AC3D83DF253374430050A995 /* SceneDelegate.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		AC3D84352533825E0050A995 /* AlbumCollection */ = {
+			isa = PBXGroup;
+			children = (
+				AC3D8458253384BD0050A995 /* Protocols */,
+				AC3D8440253382B80050A995 /* Model */,
+				AC3D843E253382AB0050A995 /* View */,
+				AC3D843F253382B30050A995 /* ViewModel */,
+			);
+			path = AlbumCollection;
+			sourceTree = "<group>";
+		};
+		AC3D843E253382AB0050A995 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AC3D84362533828A0050A995 /* AlbumCollectionViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AC3D843F253382B30050A995 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AC3D8442253382D80050A995 /* AlbumCollectionViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AC3D8440253382B80050A995 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AC3D844B2533834F0050A995 /* PhotoDetail.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AC3D8458253384BD0050A995 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				AC3D8453253384B90050A995 /* AlbumCollectionProtocols.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		C9BC6BCFF31A5A3AE5D8EC3F /* Pods */ = {
@@ -340,7 +392,11 @@
 			files = (
 				AC3D83DE253374430050A995 /* AppDelegate.swift in Sources */,
 				AC3D8428253379140050A995 /* MainCoordinator.swift in Sources */,
+				AC3D84372533828A0050A995 /* AlbumCollectionViewController.swift in Sources */,
+				AC3D844C2533834F0050A995 /* PhotoDetail.swift in Sources */,
 				AC3D83E0253374430050A995 /* SceneDelegate.swift in Sources */,
+				AC3D8443253382D80050A995 /* AlbumCollectionViewModel.swift in Sources */,
+				AC3D8454253384B90050A995 /* AlbumCollectionProtocols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
