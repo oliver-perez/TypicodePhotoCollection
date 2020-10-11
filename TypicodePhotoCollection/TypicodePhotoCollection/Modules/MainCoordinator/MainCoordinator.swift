@@ -27,7 +27,7 @@ final class MainCoordinator {
     }
 
     func showAlbumCollectionViewController() {
-        let viewModel = AlbumCollectionViewModel()
+        let viewModel = AlbumCollectionViewModel(remoteApiClient: AlbumColletionRemoteApiClient())
         let viewController = AlbumCollectionViewController(viewModel: viewModel)
         navigationController.pushViewController(viewController, animated: false)
     }
