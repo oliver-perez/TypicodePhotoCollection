@@ -23,6 +23,7 @@
 		AC3D846B25338ACE0050A995 /* RemoteEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D846A25338ACE0050A995 /* RemoteEndpoint.swift */; };
 		AC3D847025338B200050A995 /* RemoteApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D846F25338B200050A995 /* RemoteApiError.swift */; };
 		AC3D847925338ECE0050A995 /* AlbumColletionRemoteApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D847825338ECE0050A995 /* AlbumColletionRemoteApiClient.swift */; };
+		AC3D848B2533A0610050A995 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D848A2533A0610050A995 /* AppConfiguration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,8 @@
 		AC3D846A25338ACE0050A995 /* RemoteEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteEndpoint.swift; sourceTree = "<group>"; };
 		AC3D846F25338B200050A995 /* RemoteApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteApiError.swift; sourceTree = "<group>"; };
 		AC3D847825338ECE0050A995 /* AlbumColletionRemoteApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumColletionRemoteApiClient.swift; sourceTree = "<group>"; };
+		AC3D848325339FBC0050A995 /* DevelopConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DevelopConfig.xcconfig; sourceTree = "<group>"; };
+		AC3D848A2533A0610050A995 /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +171,8 @@
 				AC3D83E8253374460050A995 /* LaunchScreen.storyboard */,
 				AC3D83DD253374430050A995 /* AppDelegate.swift */,
 				AC3D83DF253374430050A995 /* SceneDelegate.swift */,
+				AC3D848325339FBC0050A995 /* DevelopConfig.xcconfig */,
+				AC3D848A2533A0610050A995 /* AppConfiguration.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -432,6 +437,7 @@
 				AC3D846B25338ACE0050A995 /* RemoteEndpoint.swift in Sources */,
 				AC3D84372533828A0050A995 /* AlbumCollectionViewController.swift in Sources */,
 				AC3D844C2533834F0050A995 /* PhotoDetail.swift in Sources */,
+				AC3D848B2533A0610050A995 /* AppConfiguration.swift in Sources */,
 				AC3D83E0253374430050A995 /* SceneDelegate.swift in Sources */,
 				AC3D8463253389920050A995 /* RemoteApiClient.swift in Sources */,
 				AC3D8443253382D80050A995 /* AlbumCollectionViewModel.swift in Sources */,
@@ -485,6 +491,7 @@
 /* Begin XCBuildConfiguration section */
 		AC3D8402253374460050A995 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC3D848325339FBC0050A995 /* DevelopConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -546,6 +553,7 @@
 		};
 		AC3D8403253374460050A995 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC3D848325339FBC0050A995 /* DevelopConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
