@@ -1,0 +1,7 @@
+use_frameworks!
+
+target 'TypicodePhotoCollection' do
+  pod 'RxSwift', '~> 5.1'
+  pod 'RxCocoa', '~> 5.1'
+  pod 'SwiftLint'
+end
