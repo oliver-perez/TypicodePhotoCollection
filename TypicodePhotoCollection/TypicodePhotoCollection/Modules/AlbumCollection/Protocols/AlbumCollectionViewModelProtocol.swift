@@ -6,8 +6,10 @@
 //
 
 import Foundation
+import RxCocoa
 
 protocol AlbumCollectionViewModelProtocol {
+    var photoCollectionsStateDriver: Driver<PhotoCollectionsState> { get }
     /// Method to report viewDidLoad life cycle event from the view controller
     func viewDidLoad()
 }

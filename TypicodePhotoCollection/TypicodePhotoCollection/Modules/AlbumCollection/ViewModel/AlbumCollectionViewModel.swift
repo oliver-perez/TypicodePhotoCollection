@@ -17,7 +17,12 @@ final class AlbumCollectionViewModel: AlbumCollectionViewModelProtocol {
     // MARK: - Private Properties
     private let remoteApiClient: AlbumColletionRemoteApiClientProtocol
     private let disposeBag = DisposeBag()
-    let photoCollectionsState = BehaviorRelay<PhotoCollectionsState>(value: .loading)
+    private let photoCollectionsState = BehaviorRelay<PhotoCollectionsState>(value: .loading)
+    
+    // MARK: - Internal variables
+    var photoCollectionsStateDriver: Driver<PhotoCollectionsState> {
+        photoCollectionsState.asDriver()
+    }
     
     // MARK: - Initializers
     init(remoteApiClient: AlbumColletionRemoteApiClientProtocol) {
@@ -47,14 +52,5 @@ final class AlbumCollectionViewModel: AlbumCollectionViewModelProtocol {
             guard result[next.albumId] != nil else { return result[next.albumId] = [next] }
             result[next.albumId]? += [next]
         }
-    }
-}
-
-// MARK: - AlbumCollectionViewModel PhotoCollectionState extension
-extension AlbumCollectionViewModel {
-    enum PhotoCollectionsState {
-        case loading
-        case ready([Int: [PhotoDetail]])
-        case error(String)
     }
 }

@@ -18,13 +18,14 @@
 		AC3D84372533828A0050A995 /* AlbumCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D84362533828A0050A995 /* AlbumCollectionViewController.swift */; };
 		AC3D8443253382D80050A995 /* AlbumCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D8442253382D80050A995 /* AlbumCollectionViewModel.swift */; };
 		AC3D844C2533834F0050A995 /* PhotoDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D844B2533834F0050A995 /* PhotoDetail.swift */; };
-		AC3D8454253384B90050A995 /* AlbumCollectionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D8453253384B90050A995 /* AlbumCollectionProtocols.swift */; };
+		AC3D8454253384B90050A995 /* AlbumCollectionViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D8453253384B90050A995 /* AlbumCollectionViewModelProtocol.swift */; };
 		AC3D8463253389920050A995 /* RemoteApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D8462253389920050A995 /* RemoteApiClient.swift */; };
 		AC3D846B25338ACE0050A995 /* RemoteEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D846A25338ACE0050A995 /* RemoteEndpoint.swift */; };
 		AC3D847025338B200050A995 /* RemoteApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D846F25338B200050A995 /* RemoteApiError.swift */; };
 		AC3D847925338ECE0050A995 /* AlbumColletionRemoteApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D847825338ECE0050A995 /* AlbumColletionRemoteApiClient.swift */; };
 		AC3D848B2533A0610050A995 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D848A2533A0610050A995 /* AppConfiguration.swift */; };
 		AC3D84902533A1530050A995 /* AlbumColletionRemoteEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D848F2533A1530050A995 /* AlbumColletionRemoteEndpoint.swift */; };
+		AC3D84952533B5320050A995 /* PhotoCollectionsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D84942533B5320050A995 /* PhotoCollectionsState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +65,7 @@
 		AC3D84362533828A0050A995 /* AlbumCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewController.swift; sourceTree = "<group>"; };
 		AC3D8442253382D80050A995 /* AlbumCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewModel.swift; sourceTree = "<group>"; };
 		AC3D844B2533834F0050A995 /* PhotoDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetail.swift; sourceTree = "<group>"; };
-		AC3D8453253384B90050A995 /* AlbumCollectionProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionProtocols.swift; sourceTree = "<group>"; };
+		AC3D8453253384B90050A995 /* AlbumCollectionViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewModelProtocol.swift; sourceTree = "<group>"; };
 		AC3D8462253389920050A995 /* RemoteApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteApiClient.swift; sourceTree = "<group>"; };
 		AC3D846A25338ACE0050A995 /* RemoteEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteEndpoint.swift; sourceTree = "<group>"; };
 		AC3D846F25338B200050A995 /* RemoteApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteApiError.swift; sourceTree = "<group>"; };
@@ -72,6 +73,7 @@
 		AC3D848325339FBC0050A995 /* DevelopConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DevelopConfig.xcconfig; sourceTree = "<group>"; };
 		AC3D848A2533A0610050A995 /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
 		AC3D848F2533A1530050A995 /* AlbumColletionRemoteEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumColletionRemoteEndpoint.swift; sourceTree = "<group>"; };
+		AC3D84942533B5320050A995 /* PhotoCollectionsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionsState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				AC3D8442253382D80050A995 /* AlbumCollectionViewModel.swift */,
+				AC3D84942533B5320050A995 /* PhotoCollectionsState.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -218,7 +221,7 @@
 		AC3D8458253384BD0050A995 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				AC3D8453253384B90050A995 /* AlbumCollectionProtocols.swift */,
+				AC3D8453253384B90050A995 /* AlbumCollectionViewModelProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -446,7 +449,8 @@
 				AC3D84902533A1530050A995 /* AlbumColletionRemoteEndpoint.swift in Sources */,
 				AC3D8443253382D80050A995 /* AlbumCollectionViewModel.swift in Sources */,
 				AC3D847925338ECE0050A995 /* AlbumColletionRemoteApiClient.swift in Sources */,
-				AC3D8454253384B90050A995 /* AlbumCollectionProtocols.swift in Sources */,
+				AC3D84952533B5320050A995 /* PhotoCollectionsState.swift in Sources */,
+				AC3D8454253384B90050A995 /* AlbumCollectionViewModelProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
