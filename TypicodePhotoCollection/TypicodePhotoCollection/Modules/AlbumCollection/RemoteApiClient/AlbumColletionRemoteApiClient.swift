@@ -8,11 +8,6 @@
 import Foundation
 import RxSwift
 
-// MARK: AlbumColletionRemoteApiClient protocol
-protocol AlbumColletionRemoteApiClientProtocol: RemoteApiClient {
-    func get<T: Decodable>(type: T.Type, from endpoint: RemoteEndpoint) -> Single<T>
-}
-
 // MARK: - AlbumColletionRemoteApiClient
 final class AlbumColletionRemoteApiClient: AlbumColletionRemoteApiClientProtocol {
     
