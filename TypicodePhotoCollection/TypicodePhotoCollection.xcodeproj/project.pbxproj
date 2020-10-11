@@ -24,6 +24,7 @@
 		AC3D847025338B200050A995 /* RemoteApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D846F25338B200050A995 /* RemoteApiError.swift */; };
 		AC3D847925338ECE0050A995 /* AlbumColletionRemoteApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D847825338ECE0050A995 /* AlbumColletionRemoteApiClient.swift */; };
 		AC3D848B2533A0610050A995 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D848A2533A0610050A995 /* AppConfiguration.swift */; };
+		AC3D84902533A1530050A995 /* AlbumColletionRemoteEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D848F2533A1530050A995 /* AlbumColletionRemoteEndpoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		AC3D847825338ECE0050A995 /* AlbumColletionRemoteApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumColletionRemoteApiClient.swift; sourceTree = "<group>"; };
 		AC3D848325339FBC0050A995 /* DevelopConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DevelopConfig.xcconfig; sourceTree = "<group>"; };
 		AC3D848A2533A0610050A995 /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
+		AC3D848F2533A1530050A995 /* AlbumColletionRemoteEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumColletionRemoteEndpoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,6 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				AC3D847825338ECE0050A995 /* AlbumColletionRemoteApiClient.swift */,
+				AC3D848F2533A1530050A995 /* AlbumColletionRemoteEndpoint.swift */,
 			);
 			path = RemoteApiClient;
 			sourceTree = "<group>";
@@ -440,6 +443,7 @@
 				AC3D848B2533A0610050A995 /* AppConfiguration.swift in Sources */,
 				AC3D83E0253374430050A995 /* SceneDelegate.swift in Sources */,
 				AC3D8463253389920050A995 /* RemoteApiClient.swift in Sources */,
+				AC3D84902533A1530050A995 /* AlbumColletionRemoteEndpoint.swift in Sources */,
 				AC3D8443253382D80050A995 /* AlbumCollectionViewModel.swift in Sources */,
 				AC3D847925338ECE0050A995 /* AlbumColletionRemoteApiClient.swift in Sources */,
 				AC3D8454253384B90050A995 /* AlbumCollectionProtocols.swift in Sources */,
