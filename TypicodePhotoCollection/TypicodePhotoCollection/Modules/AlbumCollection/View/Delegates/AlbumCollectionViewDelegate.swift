@@ -42,7 +42,7 @@ extension AlbumCollectionViewDelegate: UICollectionViewDelegateFlowLayout {
         let maxWidth = UIScreen.main.bounds.width - 32.0
         let totalSpacing = interItemSpacing * numberOfItemsPerRow
         let itemWidth = (maxWidth - totalSpacing) / numberOfItemsPerRow
-        return CGSize(width: itemWidth, height: itemWidth * 1.25)
+        return CGSize(width: itemWidth, height: itemWidth * 1.30)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
@@ -50,6 +50,6 @@ extension AlbumCollectionViewDelegate: UICollectionViewDelegateFlowLayout {
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        UIEdgeInsets(top: 20.0, left: 16.0, bottom: interItemSpacing / 2, right: 16.0)
+        UIEdgeInsets(top: 16.0, left: 16.0, bottom: interItemSpacing / 2, right: 16.0)
     }
 }

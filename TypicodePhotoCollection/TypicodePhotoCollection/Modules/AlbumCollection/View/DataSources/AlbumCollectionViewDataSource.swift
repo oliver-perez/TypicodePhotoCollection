@@ -13,6 +13,9 @@ final class AlbumCollectionViewDataSource: NSObject, UICollectionViewDataSource 
     typealias PhotoAlbums = [Int: [PhotoDetail]]
     // MARK: - Private properties
     private var photoAlbums: PhotoAlbums = [:]
+    private lazy var albumIds: [Int] = {
+        photoAlbums.keys.sorted()
+    }()
     
     func setPhotoAlbums(photoAlbums: PhotoAlbums) {
         self.photoAlbums = photoAlbums
@@ -23,7 +26,14 @@ final class AlbumCollectionViewDataSource: NSObject, UICollectionViewDataSource 
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: AlbumCollectionViewCell.self), for: indexPath)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: AlbumCollectionViewCell.self), for: indexPath) as? AlbumCollectionViewCell else { return UICollectionViewCell() }
+        let photoAlbum = photoAlbums[albumIds[indexPath.item]]
+        let photoDetail = photoAlbum?.first
+        if let thumbnailUrl = photoDetail?.thumbnailUrl {
+            cell.setImage(from: thumbnailUrl)
+        }
+        cell.set(title: "Album \(photoDetail?.albumId ?? .zero)",
+                 description: "\(photoAlbum?.count ?? .zero) photos")
         return cell
     }
 

@@ -6,13 +6,15 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class AlbumCollectionViewCell: UICollectionViewCell {
 
-    lazy var imageView: UIImageView = makeImageView()
-    lazy var titleLabel: UILabel = makeTitleLabel()
-    lazy var descriptionLabel: UILabel = makeDescriptionLabel()
-    lazy var contentStackView: UIStackView = makeStackView()
+    // MARK: - Private properties
+    private lazy var imageView: UIImageView = makeImageView()
+    private lazy var titleLabel: UILabel = makeTitleLabel()
+    private lazy var descriptionLabel: UILabel = makeDescriptionLabel()
+    private lazy var contentStackView: UIStackView = makeStackView()
 
     // MARK: - Initializers
     override init(frame: CGRect) {
@@ -32,8 +34,12 @@ final class AlbumCollectionViewCell: UICollectionViewCell {
     }
     
     // MARK: - Internal methods
-    func set(image: UIImage) {
-        imageView.image = image
+    func setImage(from url: URL) {
+        imageView.kf.setImage(
+            with: url,
+            options: [
+                .transition(.fade(0.5))
+            ])
     }
     
     func set(title: String, description: String) {
@@ -81,6 +87,7 @@ final class AlbumCollectionViewCell: UICollectionViewCell {
         textLabel.textAlignment = .center
         textLabel.numberOfLines = .zero
         textLabel.textAlignment = .left
+        textLabel.font = textLabel.font.withSize(14.0)
         return textLabel
     }
     
