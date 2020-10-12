@@ -10,7 +10,7 @@ import RxSwift
 import RxCocoa
 
 final class AlbumCollectionViewModel: AlbumCollectionViewModelProtocol {
-    
+
     // MARK: - Typealias
     private typealias Endpoint = AlbumColletionRemoteEndpoint
     
@@ -34,6 +34,11 @@ final class AlbumCollectionViewModel: AlbumCollectionViewModelProtocol {
         getPhotoColletion()
     }
     
+    func didSelectAlbum(at: Int) {
+        // TODO: Use coordinator to show next view
+    }
+    
+    // MARK: - Private methods
     private func getPhotoColletion() {
         photoCollectionsState.accept(.loading)
         remoteApiClient

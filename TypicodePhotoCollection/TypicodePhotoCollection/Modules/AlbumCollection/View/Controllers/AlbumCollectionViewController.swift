@@ -90,6 +90,12 @@ extension AlbumCollectionViewController {
         collectionView.delegate = albumsCollectionViewDelegate
         collectionView.dataSource = albumsCollectionDataSource
         collectionView.register(AlbumCollectionViewCell.self, forCellWithReuseIdentifier: String(describing: AlbumCollectionViewCell.self))
+        albumsCollectionViewDelegate
+            .itemSelectedItem
+            .subscribe(onNext: { [weak self] itemIndex in
+                self?.viewModel.didSelectAlbum(at: itemIndex)
+            })
+            .disposed(by: disposeBag)
         return collectionView
     }
 }
