@@ -9,46 +9,10 @@ import UIKit
 
 final class AlbumCollectionViewCell: UICollectionViewCell {
 
-    lazy var imageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "dummyImage")
-        imageView.setContentCompressionResistancePriority(.required, for: .vertical)
-        imageView.contentMode = .scaleAspectFit
-        return imageView
-    }()
-
-    lazy var titleLabel: UILabel = {
-        let textLabel = UILabel()
-        textLabel.text  = "Album"
-        textLabel.textAlignment = .center
-        textLabel.numberOfLines = .zero
-        textLabel.textAlignment = .left
-        textLabel.setContentHuggingPriority(.required, for: .vertical)
-        return textLabel
-    }()
-    
-    lazy var descriptionLabel: UILabel = {
-        let textLabel = UILabel()
-        textLabel.text  = "100"
-        textLabel.textAlignment = .center
-        textLabel.numberOfLines = .zero
-        textLabel.textAlignment = .left
-        return textLabel
-    }()
-
-    lazy var contentStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = NSLayoutConstraint.Axis.vertical
-        stackView.distribution  = UIStackView.Distribution.fillProportionally
-        stackView.alignment = UIStackView.Alignment.center
-        stackView.spacing = .zero
-        
-        stackView.addArrangedSubview(imageView)
-        stackView.addArrangedSubview(titleLabel)
-        stackView.addArrangedSubview(descriptionLabel)
-        
-        return stackView
-    }()
+    lazy var imageView: UIImageView = makeImageView()
+    lazy var titleLabel: UILabel = makeTitleLabel()
+    lazy var descriptionLabel: UILabel = makeDescriptionLabel()
+    lazy var contentStackView: UIStackView = makeStackView()
 
     // MARK: - Initializers
     override init(frame: CGRect) {
@@ -60,10 +24,21 @@ final class AlbumCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Life cycle
     override func layoutSubviews() {
         superview?.layoutSubviews()
         imageView.layer.masksToBounds = true
         imageView.layer.cornerRadius = 8.0
+    }
+    
+    // MARK: - Internal methods
+    func set(image: UIImage) {
+        imageView.image = image
+    }
+    
+    func set(title: String, description: String) {
+        titleLabel.text = title
+        descriptionLabel.text = description
     }
    
     // MARK: - Private methods
@@ -72,7 +47,6 @@ final class AlbumCollectionViewCell: UICollectionViewCell {
         addSubview(contentStackView)
 
         let imageWidthContraint = imageView.widthAnchor.constraint(equalTo: widthAnchor)
-
 
         NSLayoutConstraint.activate([
             contentStackView.leadingAnchor.constraint(equalTo: leadingAnchor),
@@ -84,5 +58,43 @@ final class AlbumCollectionViewCell: UICollectionViewCell {
             imageWidthContraint
         ])
         imageWidthContraint.priority = .defaultHigh
+    }
+    
+    private func makeImageView() -> UIImageView {
+        let imageView = UIImageView()
+        imageView.setContentCompressionResistancePriority(.required, for: .vertical)
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }
+    
+    private func makeTitleLabel() -> UILabel {
+        let textLabel = UILabel()
+        textLabel.textAlignment = .center
+        textLabel.numberOfLines = .zero
+        textLabel.textAlignment = .left
+        textLabel.setContentHuggingPriority(.required, for: .vertical)
+        return textLabel
+    }
+    
+    private func makeDescriptionLabel() -> UILabel {
+        let textLabel = UILabel()
+        textLabel.textAlignment = .center
+        textLabel.numberOfLines = .zero
+        textLabel.textAlignment = .left
+        return textLabel
+    }
+    
+    private func makeStackView() -> UIStackView {
+        let stackView = UIStackView()
+        stackView.axis = NSLayoutConstraint.Axis.vertical
+        stackView.distribution  = UIStackView.Distribution.fillProportionally
+        stackView.alignment = UIStackView.Alignment.center
+        stackView.spacing = .zero
+        
+        stackView.addArrangedSubview(imageView)
+        stackView.addArrangedSubview(titleLabel)
+        stackView.addArrangedSubview(descriptionLabel)
+        
+        return stackView
     }
 }
