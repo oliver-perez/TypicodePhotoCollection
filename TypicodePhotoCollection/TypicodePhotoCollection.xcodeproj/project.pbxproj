@@ -29,6 +29,8 @@
 		AC3D84A22533B8760050A995 /* AlbumColletionRemoteApiClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D84A12533B8760050A995 /* AlbumColletionRemoteApiClientProtocol.swift */; };
 		AC3D84A82533B8C90050A995 /* AlbumCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D84A72533B8C90050A995 /* AlbumCollectionView.swift */; };
 		AC3D84B52533C3000050A995 /* AlbumCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D84B42533C3000050A995 /* AlbumCollectionViewCell.swift */; };
+		AC3D84EB2533FFC50050A995 /* AlbumCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D84EA2533FFC50050A995 /* AlbumCollectionViewDelegate.swift */; };
+		AC3D84F525340DEB0050A995 /* AlbumCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D84F425340DEB0050A995 /* AlbumCollectionViewDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +82,8 @@
 		AC3D84A12533B8760050A995 /* AlbumColletionRemoteApiClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumColletionRemoteApiClientProtocol.swift; sourceTree = "<group>"; };
 		AC3D84A72533B8C90050A995 /* AlbumCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionView.swift; sourceTree = "<group>"; };
 		AC3D84B42533C3000050A995 /* AlbumCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewCell.swift; sourceTree = "<group>"; };
+		AC3D84EA2533FFC50050A995 /* AlbumCollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewDelegate.swift; sourceTree = "<group>"; };
+		AC3D84F425340DEB0050A995 /* AlbumCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +206,8 @@
 		AC3D843E253382AB0050A995 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AC3D84F225340DCB0050A995 /* DataSources */,
+				AC3D84E92533FF9F0050A995 /* Delegates */,
 				AC3D84B02533B8FF0050A995 /* Controllers */,
 				AC3D84A62533B89F0050A995 /* CustomViews */,
 				AC3D84AF2533B8F40050A995 /* Cells */,
@@ -286,6 +292,22 @@
 				AC3D84362533828A0050A995 /* AlbumCollectionViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		AC3D84E92533FF9F0050A995 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				AC3D84EA2533FFC50050A995 /* AlbumCollectionViewDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		AC3D84F225340DCB0050A995 /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				AC3D84F425340DEB0050A995 /* AlbumCollectionViewDataSource.swift */,
+			);
+			path = DataSources;
 			sourceTree = "<group>";
 		};
 		C9BC6BCFF31A5A3AE5D8EC3F /* Pods */ = {
@@ -485,8 +507,10 @@
 				AC3D847925338ECE0050A995 /* AlbumColletionRemoteApiClient.swift in Sources */,
 				AC3D84A82533B8C90050A995 /* AlbumCollectionView.swift in Sources */,
 				AC3D84952533B5320050A995 /* PhotoCollectionsState.swift in Sources */,
+				AC3D84EB2533FFC50050A995 /* AlbumCollectionViewDelegate.swift in Sources */,
 				AC3D84A22533B8760050A995 /* AlbumColletionRemoteApiClientProtocol.swift in Sources */,
 				AC3D8454253384B90050A995 /* AlbumCollectionViewModelProtocol.swift in Sources */,
+				AC3D84F525340DEB0050A995 /* AlbumCollectionViewDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

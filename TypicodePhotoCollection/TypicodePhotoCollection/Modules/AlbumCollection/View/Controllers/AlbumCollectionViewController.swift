@@ -18,8 +18,9 @@ final class AlbumCollectionViewController: UIViewController {
     
     // MARK: - Private properties
     private let disposeBag = DisposeBag()
-    private var photoAlbums: PhotoAlbums = [:]
     private lazy var albumsCollectionView: AlbumCollectionView = makeAlbumsCollectionView()
+    let albumsCollectionViewDelegate = AlbumCollectionViewDelegate()
+    let albumsCollectionDataSource = AlbumCollectionViewDataSource()
     
     // MARK: - Initializers
     init(viewModel: AlbumCollectionViewModelProtocol) {
@@ -42,6 +43,7 @@ final class AlbumCollectionViewController: UIViewController {
     // MARK: Private methods
     
     private func setupUI() {
+        title = "My Albums"
         setupAlbumCollectionViewConstraints()
     }
     
@@ -70,7 +72,7 @@ final class AlbumCollectionViewController: UIViewController {
     }
     
     private func handleReadyState(with photoAlbums: PhotoAlbums) {
-        self.photoAlbums = photoAlbums
+        albumsCollectionDataSource.setPhotoAlbums(photoAlbums: photoAlbums)
         albumsCollectionView.reloadData()
     }
     
@@ -85,8 +87,8 @@ extension AlbumCollectionViewController {
     private func makeAlbumsCollectionView() -> AlbumCollectionView {
         let layout = UICollectionViewFlowLayout()
         let collectionView = AlbumCollectionView(layout: layout)
-        collectionView.delegate = self
-        collectionView.dataSource = self
+        collectionView.delegate = albumsCollectionViewDelegate
+        collectionView.dataSource = albumsCollectionDataSource
         collectionView.register(AlbumCollectionViewCell.self, forCellWithReuseIdentifier: String(describing: AlbumCollectionViewCell.self))
         return collectionView
     }
@@ -102,17 +104,5 @@ extension AlbumCollectionViewController {
             albumsCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             albumsCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
-    }
-}
-
-// MARK: - UICollectionView delegates extension
-extension AlbumCollectionViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        photoAlbums.keys.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: AlbumCollectionViewCell.self), for: indexPath)
-        return cell
     }
 }
