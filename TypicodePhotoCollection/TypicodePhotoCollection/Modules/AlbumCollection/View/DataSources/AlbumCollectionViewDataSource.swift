@@ -11,6 +11,8 @@ final class AlbumCollectionViewDataSource: NSObject, UICollectionViewDataSource 
     
     // MARK: - Typealias
     typealias PhotoAlbums = [Int: [PhotoDetail]]
+    private typealias Localizable = AlbumCollectionLocalizable
+
     // MARK: - Private properties
     private var photoAlbums: PhotoAlbums = [:]
     private lazy var albumIds: [Int] = {
@@ -32,8 +34,8 @@ final class AlbumCollectionViewDataSource: NSObject, UICollectionViewDataSource 
         if let thumbnailUrl = photoDetail?.thumbnailUrl {
             cell.setImage(from: thumbnailUrl)
         }
-        cell.set(title: "Album \(photoDetail?.albumId ?? .zero)",
-                 description: "\(photoAlbum?.count ?? .zero) photos")
+        cell.set(title: Localizable.albumTitle.formatted(argument: "\(photoDetail?.albumId ?? .zero)"),
+                 description: Localizable.albumTitle.formatted(argument: "\(photoAlbum?.count ?? .zero)"))
         return cell
     }
 

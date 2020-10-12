@@ -11,7 +11,8 @@ import RxSwift
 final class AlbumCollectionViewController: UIViewController {
     
     // MARK: - Typealias
-    typealias PhotoAlbums = [Int: [PhotoDetail]]
+    private typealias PhotoAlbums = [Int: [PhotoDetail]]
+    private typealias Localizable = AlbumCollectionLocalizable
     
     // MARK: - Internal properties
     let viewModel: AlbumCollectionViewModelProtocol
@@ -43,7 +44,7 @@ final class AlbumCollectionViewController: UIViewController {
     // MARK: Private methods
     
     private func setupUI() {
-        title = "My Albums"
+        title = Localizable.albumViewControllerTitle.localized
         setupAlbumCollectionViewConstraints()
     }
     
