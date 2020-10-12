@@ -31,6 +31,7 @@
 		AC3D84B52533C3000050A995 /* AlbumCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D84B42533C3000050A995 /* AlbumCollectionViewCell.swift */; };
 		AC3D84EB2533FFC50050A995 /* AlbumCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D84EA2533FFC50050A995 /* AlbumCollectionViewDelegate.swift */; };
 		AC3D84F525340DEB0050A995 /* AlbumCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D84F425340DEB0050A995 /* AlbumCollectionViewDataSource.swift */; };
+		AC3D850D2534289C0050A995 /* AlbumCollectionConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D850C2534289C0050A995 /* AlbumCollectionConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		AC3D84B42533C3000050A995 /* AlbumCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewCell.swift; sourceTree = "<group>"; };
 		AC3D84EA2533FFC50050A995 /* AlbumCollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewDelegate.swift; sourceTree = "<group>"; };
 		AC3D84F425340DEB0050A995 /* AlbumCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewDataSource.swift; sourceTree = "<group>"; };
+		AC3D850C2534289C0050A995 /* AlbumCollectionConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +196,7 @@
 		AC3D84352533825E0050A995 /* AlbumCollection */ = {
 			isa = PBXGroup;
 			children = (
+				AC3D850B253428730050A995 /* Constants */,
 				AC3D847725338EB70050A995 /* RemoteApiClient */,
 				AC3D8458253384BD0050A995 /* Protocols */,
 				AC3D8440253382B80050A995 /* Model */,
@@ -308,6 +311,14 @@
 				AC3D84F425340DEB0050A995 /* AlbumCollectionViewDataSource.swift */,
 			);
 			path = DataSources;
+			sourceTree = "<group>";
+		};
+		AC3D850B253428730050A995 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				AC3D850C2534289C0050A995 /* AlbumCollectionConstants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		C9BC6BCFF31A5A3AE5D8EC3F /* Pods */ = {
@@ -507,6 +518,7 @@
 				AC3D847925338ECE0050A995 /* AlbumColletionRemoteApiClient.swift in Sources */,
 				AC3D84A82533B8C90050A995 /* AlbumCollectionView.swift in Sources */,
 				AC3D84952533B5320050A995 /* PhotoCollectionsState.swift in Sources */,
+				AC3D850D2534289C0050A995 /* AlbumCollectionConstants.swift in Sources */,
 				AC3D84EB2533FFC50050A995 /* AlbumCollectionViewDelegate.swift in Sources */,
 				AC3D84A22533B8760050A995 /* AlbumColletionRemoteApiClientProtocol.swift in Sources */,
 				AC3D8454253384B90050A995 /* AlbumCollectionViewModelProtocol.swift in Sources */,

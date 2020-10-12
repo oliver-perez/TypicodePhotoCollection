@@ -10,9 +10,11 @@ import RxCocoa
 import RxSwift
 
 final class AlbumCollectionViewDelegate: NSObject {
+    // MARK: Typealias
+    private typealias constants = AlbumCollectionConstants.CollectionViewMetrics
     
     // MARK: - Private properties
-    private let numberOfItemsPerRow: CGFloat
+    private let numberOfItemsPerRow: Int
     private let interItemSpacing: CGFloat
     private let itemSelectedSubject = PublishSubject<Int>()
     
@@ -22,9 +24,10 @@ final class AlbumCollectionViewDelegate: NSObject {
     }
     
     // MARK: - Initializers
-    init(numberOfItemsPerRow: CGFloat = 2.0, interItemSpacing: CGFloat = 8.0) {
-        self.numberOfItemsPerRow = numberOfItemsPerRow
-        self.interItemSpacing = interItemSpacing
+    override init() {
+        self.numberOfItemsPerRow = constants.numberOfItemsPerRow
+        self.interItemSpacing = constants.interItemSpacing
+        super.init()
     }
 }
 
@@ -39,10 +42,10 @@ extension AlbumCollectionViewDelegate: UICollectionViewDelegate {
 extension AlbumCollectionViewDelegate: UICollectionViewDelegateFlowLayout {
     // MARK: - UICollectionViewDelegateFlowLayout methods
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let maxWidth = UIScreen.main.bounds.width - 32.0
-        let totalSpacing = interItemSpacing * numberOfItemsPerRow
-        let itemWidth = (maxWidth - totalSpacing) / numberOfItemsPerRow
-        return CGSize(width: itemWidth, height: itemWidth * 1.30)
+        let maxWidth = UIScreen.main.bounds.width - (constants.insets.left + constants.insets.right)
+        let totalSpacing = interItemSpacing * CGFloat(numberOfItemsPerRow)
+        let itemWidth = (maxWidth - totalSpacing) / CGFloat(numberOfItemsPerRow)
+        return CGSize(width: itemWidth, height: itemWidth * constants.cellHeighFactor)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
@@ -50,6 +53,6 @@ extension AlbumCollectionViewDelegate: UICollectionViewDelegateFlowLayout {
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        UIEdgeInsets(top: 16.0, left: 16.0, bottom: interItemSpacing / 2, right: 16.0)
+        constants.insets
     }
 }

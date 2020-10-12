@@ -9,6 +9,9 @@ import UIKit
 import Kingfisher
 
 final class AlbumCollectionViewCell: UICollectionViewCell {
+    
+    // MARK: Typealias
+    private typealias constants = AlbumCollectionConstants.CellViewMetrics
 
     // MARK: - Private properties
     private lazy var imageView: UIImageView = makeImageView()
@@ -30,7 +33,7 @@ final class AlbumCollectionViewCell: UICollectionViewCell {
     override func layoutSubviews() {
         superview?.layoutSubviews()
         imageView.layer.masksToBounds = true
-        imageView.layer.cornerRadius = 8.0
+        imageView.layer.cornerRadius = constants.cornerRadiusImage
     }
     
     // MARK: - Internal methods
@@ -38,7 +41,7 @@ final class AlbumCollectionViewCell: UICollectionViewCell {
         imageView.kf.setImage(
             with: url,
             options: [
-                .transition(.fade(0.5))
+                .transition(.fade(constants.imageLoadingTransitionDuration))
             ])
     }
     
@@ -87,7 +90,7 @@ final class AlbumCollectionViewCell: UICollectionViewCell {
         textLabel.textAlignment = .center
         textLabel.numberOfLines = .zero
         textLabel.textAlignment = .left
-        textLabel.font = textLabel.font.withSize(14.0)
+        textLabel.font = textLabel.font.withSize(constants.descriptionLabelFontSize)
         return textLabel
     }
     
