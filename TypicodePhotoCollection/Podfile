@@ -3,5 +3,6 @@ use_frameworks!
 target 'TypicodePhotoCollection' do
   pod 'RxSwift', '~> 5.1'
   pod 'RxCocoa', '~> 5.1'
+  pod 'Kingfisher', '~> 5.15'
   pod 'SwiftLint'
 end

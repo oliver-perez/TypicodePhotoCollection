@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  TypicodePhotoCollection
+
+  Created by Oliver Jordy Pérez Escamilla on 12/10/20.
+  
+*/
+
+"album_view_controller_title" = "My Albums";
+"album_cell_title" = "Album %@";
+"album_cell_description" = "%@ photos";

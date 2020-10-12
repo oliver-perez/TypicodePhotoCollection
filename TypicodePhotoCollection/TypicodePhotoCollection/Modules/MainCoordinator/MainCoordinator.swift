@@ -22,10 +22,14 @@ final class MainCoordinator {
         showInitialView()
     }
 
-    func showInitialView() {
-        let initialViewController = UIViewController()
-        initialViewController.view.backgroundColor = .blue
-        navigationController.pushViewController(initialViewController, animated: false)
+    private func showInitialView() {
+        showAlbumCollectionViewController()
+    }
+
+    func showAlbumCollectionViewController() {
+        let viewModel = AlbumCollectionViewModel(remoteApiClient: AlbumColletionRemoteApiClient())
+        let viewController = AlbumCollectionViewController(viewModel: viewModel)
+        navigationController.pushViewController(viewController, animated: false)
     }
 
 }
