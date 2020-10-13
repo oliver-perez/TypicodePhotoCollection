@@ -7,6 +7,7 @@
 
 import UIKit
 import RxSwift
+import Lottie
 
 final class AlbumCollectionViewController: UIViewController {
     
@@ -22,6 +23,7 @@ final class AlbumCollectionViewController: UIViewController {
     private lazy var albumsCollectionView: UICollectionView = makeAlbumsCollectionView()
     private let albumsCollectionViewDelegate = AlbumCollectionViewDelegate()
     private let albumsCollectionDataSource = AlbumCollectionViewDataSource()
+    private let animationView = AnimationView()
     
     // MARK: - Initializers
     init(viewModel: AlbumCollectionViewModelProtocol) {
@@ -68,16 +70,33 @@ final class AlbumCollectionViewController: UIViewController {
     }
     
     private func handleLoadingState() {
-        // TODO: Show loading animation
+        playLoadingAnimation()
     }
     
     private func handleReadyState(with photoAlbums: PhotoAlbums) {
+        stopLoadingAnimation()
         albumsCollectionDataSource.setPhotoAlbums(photoAlbums: photoAlbums)
         albumsCollectionView.reloadData()
     }
     
     private func handleErrorState(with description: String) {
         // TODO: Show error alert
+    }
+    
+    private func playLoadingAnimation() {
+        view.addSubview(animationView)
+        animationView.frame = CGRect(x: 0, y: 0, width: 150, height: 150)
+        animationView.center = view.center
+        animationView.animation = Animation.named("loadingAnimation")
+        animationView.loopMode = .loop
+        animationView.animationSpeed = 1.5
+        animationView.play()
+    }
+    
+    private func stopLoadingAnimation() {
+        animationView.loopMode = .playOnce
+        animationView.play(completion: { [weak self] _ in
+                            self?.animationView.removeFromSuperview()})
     }
 
 }

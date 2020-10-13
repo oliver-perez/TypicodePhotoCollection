@@ -22,6 +22,7 @@
 		AC25F094253578DE0032B82F /* PhotoDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC25F093253578DE0032B82F /* PhotoDetailViewModel.swift */; };
 		AC25F0A6253580F30032B82F /* PhotoDetailConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC25F0A5253580F30032B82F /* PhotoDetailConstants.swift */; };
 		AC25F0AF2535831B0032B82F /* PhotoDetailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC25F0AE2535831B0032B82F /* PhotoDetailProtocols.swift */; };
+		AC25F0D225358FB70032B82F /* loadingAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = AC25F0D125358FB70032B82F /* loadingAnimation.json */; };
 		AC3B0BD925342D9F0059DAED /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AC3B0BDB25342D9F0059DAED /* Localizable.strings */; };
 		AC3B0BE025342E7E0059DAED /* AlbumCollectionLocalizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3B0BDF25342E7E0059DAED /* AlbumCollectionLocalizable.swift */; };
 		AC3D83DE253374430050A995 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D83DD253374430050A995 /* AppDelegate.swift */; };
@@ -84,6 +85,7 @@
 		AC25F093253578DE0032B82F /* PhotoDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewModel.swift; sourceTree = "<group>"; };
 		AC25F0A5253580F30032B82F /* PhotoDetailConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailConstants.swift; sourceTree = "<group>"; };
 		AC25F0AE2535831B0032B82F /* PhotoDetailProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailProtocols.swift; sourceTree = "<group>"; };
+		AC25F0D125358FB70032B82F /* loadingAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loadingAnimation.json; sourceTree = "<group>"; };
 		AC3B0BDA25342D9F0059DAED /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AC3B0BDF25342E7E0059DAED /* AlbumCollectionLocalizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionLocalizable.swift; sourceTree = "<group>"; };
 		AC3D83DA253374430050A995 /* TypicodePhotoCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TypicodePhotoCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -307,6 +309,14 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		AC25F0D025358F950032B82F /* LottieAnimations */ = {
+			isa = PBXGroup;
+			children = (
+				AC25F0D125358FB70032B82F /* loadingAnimation.json */,
+			);
+			path = LottieAnimations;
+			sourceTree = "<group>";
+		};
 		AC3D83D1253374430050A995 = {
 			isa = PBXGroup;
 			children = (
@@ -441,6 +451,7 @@
 		AC3D8461253389580050A995 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				AC25F0D025358F950032B82F /* LottieAnimations */,
 				AC25F0372535480A0032B82F /* Extensions */,
 				AC3D841E253378750050A995 /* MainCoordinator */,
 				AC3D84602533894A0050A995 /* RemoteAPIClient */,
@@ -616,6 +627,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC25F0D225358FB70032B82F /* loadingAnimation.json in Resources */,
 				AC3D83EA253374460050A995 /* LaunchScreen.storyboard in Resources */,
 				AC3B0BD925342D9F0059DAED /* Localizable.strings in Resources */,
 				AC3D83E7253374460050A995 /* Assets.xcassets in Resources */,
