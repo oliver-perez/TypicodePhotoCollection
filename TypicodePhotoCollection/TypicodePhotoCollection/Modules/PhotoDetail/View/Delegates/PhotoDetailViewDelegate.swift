@@ -10,7 +10,7 @@ import RxSwift
 
 final class PhotoDetailViewDelegate: NSObject {
     // MARK: Typealias
-    private typealias constants = PhotoCollectionConstants.CollectionViewMetrics
+    private typealias constants = PhotoDetailConstants.CollectionViewMetrics
     
     // MARK: - Private properties
     private let numberOfItemsPerRow: Int

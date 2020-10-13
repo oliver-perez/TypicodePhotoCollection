@@ -20,6 +20,8 @@
 		AC25F0892535779D0032B82F /* PhotoDetailViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC25F0882535779D0032B82F /* PhotoDetailViewDataSource.swift */; };
 		AC25F08E253577D10032B82F /* PhotoDetailViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC25F08D253577D10032B82F /* PhotoDetailViewDelegate.swift */; };
 		AC25F094253578DE0032B82F /* PhotoDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC25F093253578DE0032B82F /* PhotoDetailViewModel.swift */; };
+		AC25F0A6253580F30032B82F /* PhotoDetailConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC25F0A5253580F30032B82F /* PhotoDetailConstants.swift */; };
+		AC25F0AF2535831B0032B82F /* PhotoDetailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC25F0AE2535831B0032B82F /* PhotoDetailProtocols.swift */; };
 		AC3B0BD925342D9F0059DAED /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AC3B0BDB25342D9F0059DAED /* Localizable.strings */; };
 		AC3B0BE025342E7E0059DAED /* AlbumCollectionLocalizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3B0BDF25342E7E0059DAED /* AlbumCollectionLocalizable.swift */; };
 		AC3D83DE253374430050A995 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D83DD253374430050A995 /* AppDelegate.swift */; };
@@ -80,6 +82,8 @@
 		AC25F0882535779D0032B82F /* PhotoDetailViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewDataSource.swift; sourceTree = "<group>"; };
 		AC25F08D253577D10032B82F /* PhotoDetailViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewDelegate.swift; sourceTree = "<group>"; };
 		AC25F093253578DE0032B82F /* PhotoDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewModel.swift; sourceTree = "<group>"; };
+		AC25F0A5253580F30032B82F /* PhotoDetailConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailConstants.swift; sourceTree = "<group>"; };
+		AC25F0AE2535831B0032B82F /* PhotoDetailProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailProtocols.swift; sourceTree = "<group>"; };
 		AC3B0BDA25342D9F0059DAED /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AC3B0BDF25342E7E0059DAED /* AlbumCollectionLocalizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionLocalizable.swift; sourceTree = "<group>"; };
 		AC3D83DA253374430050A995 /* TypicodePhotoCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TypicodePhotoCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -237,6 +241,8 @@
 		AC25F07A253576220032B82F /* PhotoDetail */ = {
 			isa = PBXGroup;
 			children = (
+				AC25F0AD2535830A0032B82F /* Protocols */,
+				AC25F0A4253580D20032B82F /* Constants */,
 				AC25F092253578D40032B82F /* ViewModel */,
 				AC25F080253576F00032B82F /* View */,
 			);
@@ -283,6 +289,22 @@
 				AC25F093253578DE0032B82F /* PhotoDetailViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AC25F0A4253580D20032B82F /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				AC25F0A5253580F30032B82F /* PhotoDetailConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		AC25F0AD2535830A0032B82F /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				AC25F0AE2535831B0032B82F /* PhotoDetailProtocols.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		AC3D83D1253374430050A995 = {
@@ -682,6 +704,7 @@
 				AC3D848B2533A0610050A995 /* AppConfiguration.swift in Sources */,
 				AC3D83E0253374430050A995 /* SceneDelegate.swift in Sources */,
 				AC3D8463253389920050A995 /* RemoteApiClient.swift in Sources */,
+				AC25F0AF2535831B0032B82F /* PhotoDetailProtocols.swift in Sources */,
 				AC3D84902533A1530050A995 /* AlbumColletionRemoteEndpoint.swift in Sources */,
 				AC3D8443253382D80050A995 /* AlbumCollectionViewModel.swift in Sources */,
 				AC3D847925338ECE0050A995 /* AlbumColletionRemoteApiClient.swift in Sources */,
@@ -693,6 +716,7 @@
 				AC3D8454253384B90050A995 /* AlbumCollectionViewModelProtocol.swift in Sources */,
 				AC25F07C253576430032B82F /* PhotoDetailViewController.swift in Sources */,
 				AC3D84F525340DEB0050A995 /* AlbumCollectionViewDataSource.swift in Sources */,
+				AC25F0A6253580F30032B82F /* PhotoDetailConstants.swift in Sources */,
 				AC25F094253578DE0032B82F /* PhotoDetailViewModel.swift in Sources */,
 				AC25EFFB25352E560032B82F /* PhotoCollectionViewController.swift in Sources */,
 			);

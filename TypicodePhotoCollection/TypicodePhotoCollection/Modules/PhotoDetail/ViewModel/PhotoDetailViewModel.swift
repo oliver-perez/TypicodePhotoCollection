@@ -9,19 +9,19 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-final class PhotoDetailViewModel: PhotoCollectionViewModelProtocol {
+final class PhotoDetailViewModel: PhotoDetailViewModelProtocol {
     
     // MARK: - Private Properties
-    private let albumRelay = BehaviorRelay<[URL]>(value: [])
+    private let albumRelay = BehaviorRelay<(selectedIndex: Int, album: [PhotoDetail])>(value: (selectedIndex: Int(), album: []))
     
     // MARK: - Internal variables
-    var albumDriver: Driver<[URL]> {
+    var albumDriver: Driver<(selectedIndex: Int, album: [PhotoDetail])> {
         albumRelay.asDriver()
     }
     
     // MARK: - Initializers
-    init(album: [PhotoDetail]) {
-        albumRelay.accept(album.map { $0.thumbnailUrl })
+    init(selectedIndex: Int, album: [PhotoDetail]) {
+        albumRelay.accept((selectedIndex: selectedIndex, album))
     }
 
 }

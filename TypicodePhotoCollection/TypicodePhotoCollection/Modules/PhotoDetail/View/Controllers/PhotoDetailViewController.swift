@@ -16,6 +16,7 @@ final class PhotoDetailViewController: UIViewController {
     // MARK: - Private properties
     private lazy var photoDetailCollectionView: UICollectionView = makeCollectionView()
     private let disposeBag = DisposeBag()
+    private var selectedPhotoIndex: Int = 0
 
     // MARK: - Internal properties
     let photoDetailViewDelegate = PhotoDetailViewDelegate()
@@ -23,10 +24,11 @@ final class PhotoDetailViewController: UIViewController {
     let viewModel: PhotoDetailViewModel
 
     // MARK: - Initializers
-    init(viewModel: PhotoDetailViewModel, albumId: String) {
+    init(viewModel: PhotoDetailViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
-        title = Localizable.albumTitle.formatted(argument: albumId)
+        setupUI()
+        bindToViewModel()
     }
     
     required init?(coder: NSCoder) {
@@ -36,7 +38,7 @@ final class PhotoDetailViewController: UIViewController {
     // MARK: - Life cycle methods
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        photoDetailCollectionView.setContentOffset(CGPoint(x: UIScreen.main.bounds.width, y: photoDetailCollectionView.contentOffset.y), animated: false)
+        photoDetailCollectionView.setContentOffset(CGPoint(x: UIScreen.main.bounds.width * CGFloat(selectedPhotoIndex), y: photoDetailCollectionView.contentOffset.y), animated: false)
     }
     
     // MARK: Private methods
@@ -47,8 +49,10 @@ final class PhotoDetailViewController: UIViewController {
     private func bindToViewModel() {
         viewModel
             .albumDriver
-            .drive(onNext: { [weak self] albumURLs in
-                self?.photoDetailDataSource.set(albumURLs: albumURLs)
+            .drive(onNext: { [weak self] selectionDetail in
+                let selectedIndex = selectionDetail.selectedIndex
+                self?.selectedPhotoIndex = selectedIndex
+                self?.photoDetailDataSource.set(albumURLs: selectionDetail.album.map { $0.url } )
                 self?.photoDetailCollectionView.reloadData()
             })
             .disposed(by: disposeBag)
