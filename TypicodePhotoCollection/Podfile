@@ -1,3 +1,9 @@
+def testing_pods
+  pod 'RxSwift'
+  pod 'RxBlocking'
+  pod 'RxTest'
+end
+
 use_frameworks!
 
 target 'TypicodePhotoCollection' do
@@ -6,4 +12,11 @@ target 'TypicodePhotoCollection' do
   pod 'Kingfisher', '~> 5.15'
   pod 'SwiftLint'
   pod 'lottie-ios'
+  
+  target 'TypicodePhotoCollectionTests' do
+    inherit! :search_paths
+    # Pods for testing
+    testing_pods
+  end
+  
 end

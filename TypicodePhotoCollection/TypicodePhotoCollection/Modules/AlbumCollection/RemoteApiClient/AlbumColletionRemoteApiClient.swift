@@ -12,10 +12,10 @@ import RxSwift
 final class AlbumColletionRemoteApiClient: AlbumColletionRemoteApiClientProtocol {
     
     // MARK: - Private Properties
-    var urlSession: URLSession
+    var urlSession: URLSessionProtocol
     
     // MARK: - Initializers
-    init(urlSession: URLSession = URLSession.shared) {
+    init(urlSession: URLSessionProtocol = URLSession.shared) {
         self.urlSession = urlSession
     }
 
