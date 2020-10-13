@@ -35,7 +35,7 @@ final class AlbumCollectionViewDataSource: NSObject, UICollectionViewDataSource 
             cell.setImage(from: thumbnailUrl)
         }
         cell.set(title: Localizable.albumTitle.formatted(argument: "\(photoDetail?.albumId ?? .zero)"),
-                 description: Localizable.albumTitle.formatted(argument: "\(photoAlbum?.count ?? .zero)"))
+                 description: Localizable.albumDescription.formatted(argument: "\(photoAlbum?.count ?? .zero)"))
         return cell
     }
 

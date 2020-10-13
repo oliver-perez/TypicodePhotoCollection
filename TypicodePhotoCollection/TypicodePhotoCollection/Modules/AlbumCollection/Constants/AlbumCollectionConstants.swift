@@ -15,10 +15,13 @@ enum AlbumCollectionConstants {
         static let cellHeighFactor: CGFloat = 1.3
         static let insets = UIEdgeInsets(top: 16.0, left: 16.0, bottom: interItemSpacing / 2, right: 16.0)
     }
-    
+
     struct CellViewMetrics {
         static let cornerRadiusImage: CGFloat = 8.0
         static let imageLoadingTransitionDuration: Double = 0.5
         static let descriptionLabelFontSize: CGFloat = 14.0
+        static let stackViewBottomSpacing: CGFloat = 16.0
+        static let stackViewTitleSpacing: CGFloat = 4.0
+        static let imageViewAspectRatio: CGFloat = 1.0/1.0
     }
 }
