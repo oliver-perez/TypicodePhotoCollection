@@ -61,10 +61,10 @@ final class AlbumCollectionViewCell: UICollectionViewCell {
             contentStackView.leadingAnchor.constraint(equalTo: leadingAnchor),
             contentStackView.trailingAnchor.constraint(equalTo: trailingAnchor),
             contentStackView.topAnchor.constraint(equalTo: topAnchor),
-            contentStackView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            bottomAnchor.constraint(equalTo: contentStackView.bottomAnchor, constant: constants.stackViewBottomSpacing),
             titleLabel.widthAnchor.constraint(equalTo: imageView.widthAnchor),
             descriptionLabel.widthAnchor.constraint(equalTo: imageView.widthAnchor),
-            imageWidthContraint
+            imageView.aspectRatio(constants.imageViewAspectRatio)
         ])
         imageWidthContraint.priority = .defaultHigh
     }
@@ -72,13 +72,12 @@ final class AlbumCollectionViewCell: UICollectionViewCell {
     private func makeImageView() -> UIImageView {
         let imageView = UIImageView()
         imageView.setContentCompressionResistancePriority(.required, for: .vertical)
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFill
         return imageView
     }
     
     private func makeTitleLabel() -> UILabel {
         let textLabel = UILabel()
-        textLabel.textAlignment = .center
         textLabel.numberOfLines = .zero
         textLabel.textAlignment = .left
         textLabel.setContentHuggingPriority(.required, for: .vertical)
@@ -87,23 +86,30 @@ final class AlbumCollectionViewCell: UICollectionViewCell {
     
     private func makeDescriptionLabel() -> UILabel {
         let textLabel = UILabel()
-        textLabel.textAlignment = .center
         textLabel.numberOfLines = .zero
         textLabel.textAlignment = .left
+        textLabel.sizeToFit()
         textLabel.font = textLabel.font.withSize(constants.descriptionLabelFontSize)
         return textLabel
     }
     
     private func makeStackView() -> UIStackView {
         let stackView = UIStackView()
-        stackView.axis = NSLayoutConstraint.Axis.vertical
-        stackView.distribution  = UIStackView.Distribution.fillProportionally
-        stackView.alignment = UIStackView.Alignment.center
-        stackView.spacing = .zero
+        stackView.axis = .vertical
+        stackView.distribution  = .fillProportionally
+        stackView.alignment = .center
+        stackView.spacing = constants.stackViewTitleSpacing
+        
+        let nestedStackView = UIStackView()
+        nestedStackView.axis = .vertical
+        nestedStackView.distribution = .fill
+        nestedStackView.alignment = .fill
+        nestedStackView.addArrangedSubview(titleLabel)
+        nestedStackView.addArrangedSubview(descriptionLabel)
+        nestedStackView.spacing = .zero
         
         stackView.addArrangedSubview(imageView)
-        stackView.addArrangedSubview(titleLabel)
-        stackView.addArrangedSubview(descriptionLabel)
+        stackView.addArrangedSubview(nestedStackView)
         
         return stackView
     }
