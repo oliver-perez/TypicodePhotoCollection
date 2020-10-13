@@ -44,6 +44,19 @@ final class MainCoordinator {
     func showPhotoCollection(for album: [PhotoDetail]) {
         let viewModel = PhotoCollectionViewModel(album: album)
         let viewController = PhotoCollectionViewController(viewModel: viewModel, albumId: "\(album.first?.albumId ?? .zero)")
+        viewModel.photoSelected
+            .subscribe(onNext: { [weak self] selectedPhoto in
+                self?.showPhotoDetail(for: selectedPhoto.index,
+                                      album: selectedPhoto.album)
+            })
+            .disposed(by: disposeBag)
+        
+        navigationController.pushViewController(viewController, animated: true)
+    }
+
+    func showPhotoDetail(for index: Int, album: [PhotoDetail]) {
+        let viewModel = PhotoDetailViewModel(selectedIndex: index, album: album)
+        let viewController = PhotoDetailViewController(viewModel: viewModel)
         navigationController.pushViewController(viewController, animated: true)
     }
 

@@ -81,6 +81,7 @@ final class AlbumCollectionViewCell: UICollectionViewCell {
         textLabel.numberOfLines = .zero
         textLabel.textAlignment = .left
         textLabel.setContentHuggingPriority(.required, for: .vertical)
+        textLabel.setContentCompressionResistancePriority(.required, for: .vertical)
         return textLabel
     }
     
@@ -90,13 +91,14 @@ final class AlbumCollectionViewCell: UICollectionViewCell {
         textLabel.textAlignment = .left
         textLabel.sizeToFit()
         textLabel.font = textLabel.font.withSize(constants.descriptionLabelFontSize)
+        textLabel.setContentCompressionResistancePriority(.required, for: .vertical)
         return textLabel
     }
     
     private func makeStackView() -> UIStackView {
         let stackView = UIStackView()
         stackView.axis = .vertical
-        stackView.distribution  = .fillProportionally
+        stackView.distribution = .fillProportionally
         stackView.alignment = .center
         stackView.spacing = constants.stackViewTitleSpacing
         

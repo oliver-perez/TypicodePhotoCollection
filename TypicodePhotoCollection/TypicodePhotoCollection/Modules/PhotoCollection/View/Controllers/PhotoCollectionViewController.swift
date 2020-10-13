@@ -70,7 +70,7 @@ extension PhotoCollectionViewController {
         photoCollectionViewDelegate
             .itemSelectedItem
             .subscribe(onNext: { [weak self] itemIndex in
-//                self?.viewModel.didSelectAlbum(at: itemIndex)
+                self?.viewModel.didSelectPhoto(at: itemIndex)
             })
             .disposed(by: disposeBag)
         return collectionView
