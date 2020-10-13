@@ -30,7 +30,7 @@ final class AlbumColletionRemoteApiClientTests: XCTestCase {
         super.tearDown()
     }
 
-    func test_getPhotoColletion_loadsCorrectURL() throws {
+    func test_getPhotoColletion_shouldLoadCorrectURL() throws {
         // Given
         let baseURL = try XCTUnwrap(AlbumColletionRemoteEndpoint.photoCollections.baseURL)
         let path = try XCTUnwrap(AlbumColletionRemoteEndpoint.photoCollections.path)
@@ -42,6 +42,23 @@ final class AlbumColletionRemoteApiClientTests: XCTestCase {
             .disposed(by: disposeBag)
         // Then
         XCTAssertEqual(urlSessionMock.lastURL, expectedURL)
+    }
+    
+    func test_getPhotoColletion_sholudParsePhotoDetailsObject() throws {
+        // Given
+        urlSessionMock.testData = try? XCTUnwrap(getData(for: "TypicodePhotosResponse"))
+        var expectedPhotoDetail: [PhotoDetail]?
+        let expectedPhotoDetailCount = 3
+        // When
+        sut.get(type: [PhotoDetail].self, from: AlbumColletionRemoteEndpoint.photoCollections)
+            .subscribe(onSuccess: { photoDetail in
+                expectedPhotoDetail = photoDetail
+            }, onError: { _ in
+                XCTFail("Responde was expected to succeed")
+            })
+            .disposed(by: disposeBag)
+        // Then
+        XCTAssertEqual(expectedPhotoDetail?.count, expectedPhotoDetailCount)
     }
     
     // MARK: - Helper methods
