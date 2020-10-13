@@ -16,7 +16,12 @@ final class PhotoDetailViewController: UIViewController {
     // MARK: - Private properties
     private lazy var photoDetailCollectionView: UICollectionView = makeCollectionView()
     private let disposeBag = DisposeBag()
-    private var selectedPhotoIndex: Int = 0
+    var album: [PhotoDetail] = []
+    private var selectedPhotoIndex: Int = 0 {
+        didSet {
+            title = album[selectedPhotoIndex].title
+        }
+    }
 
     // MARK: - Internal properties
     let photoDetailViewDelegate = PhotoDetailViewDelegate()
@@ -44,6 +49,12 @@ final class PhotoDetailViewController: UIViewController {
     // MARK: Private methods
     private func setupUI() {
         setupCollectionViewConstraints()
+        photoDetailViewDelegate.itemDidEndDecelerating
+            .subscribe(onNext: { [weak self] _ in
+                guard let self = self else { return }
+                self.selectedPhotoIndex = Int(self.photoDetailCollectionView.contentOffset.x / self.view.frame.width)
+            })
+            .disposed(by: disposeBag)
     }
 
     private func bindToViewModel() {
@@ -51,6 +62,7 @@ final class PhotoDetailViewController: UIViewController {
             .albumDriver
             .drive(onNext: { [weak self] selectionDetail in
                 let selectedIndex = selectionDetail.selectedIndex
+                self?.album = selectionDetail.album
                 self?.selectedPhotoIndex = selectedIndex
                 self?.photoDetailDataSource.set(albumURLs: selectionDetail.album.map { $0.url } )
                 self?.photoDetailCollectionView.reloadData()

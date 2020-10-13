@@ -15,11 +15,11 @@ final class PhotoDetailViewDelegate: NSObject {
     // MARK: - Private properties
     private let numberOfItemsPerRow: Int
     private let interItemSpacing: CGFloat
-    private let itemSelectedSubject = PublishSubject<Int>()
+    private let itemDidEndDeceleratingSubject = PublishSubject<Void>()
     
     // MARK: - Internal properties
-    var itemSelectedItem: Observable<Int> {
-        itemSelectedSubject.asObservable()
+    var itemDidEndDecelerating: Observable<Void> {
+        itemDidEndDeceleratingSubject.asObservable()
     }
     
     // MARK: - Initializers
@@ -27,13 +27,6 @@ final class PhotoDetailViewDelegate: NSObject {
         self.numberOfItemsPerRow = constants.numberOfItemsPerRow
         self.interItemSpacing = constants.interItemSpacing
         super.init()
-    }
-}
-
-// MARK: - UICollectionViewDelegate extension
-extension PhotoDetailViewDelegate: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        itemSelectedSubject.onNext(indexPath.item)
     }
 }
 
@@ -57,6 +50,10 @@ extension PhotoDetailViewDelegate: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         interItemSpacing
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        itemDidEndDeceleratingSubject.onNext(())
     }
 }
 
