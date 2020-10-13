@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class AlbumCollectionViewDataSource: NSObject, UICollectionViewDataSource {
+final class AlbumCollectionViewDataSource: NSObject {
     
     // MARK: - Typealias
     typealias PhotoAlbums = [Int: [PhotoDetail]]
@@ -19,10 +19,15 @@ final class AlbumCollectionViewDataSource: NSObject, UICollectionViewDataSource 
         photoAlbums.keys.sorted()
     }()
     
+    // MARK: - Internal Methods
     func setPhotoAlbums(photoAlbums: PhotoAlbums) {
         self.photoAlbums = photoAlbums
     }
-    
+
+}
+
+// MARK: - UICollectionViewDataSource extension
+extension AlbumCollectionViewDataSource: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         photoAlbums.keys.count
     }
@@ -38,5 +43,4 @@ final class AlbumCollectionViewDataSource: NSObject, UICollectionViewDataSource 
                  description: Localizable.albumDescription.formatted(argument: "\(photoAlbum?.count ?? .zero)"))
         return cell
     }
-
 }

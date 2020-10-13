@@ -42,7 +42,8 @@ final class MainCoordinator {
     }
     
     func showPhotoCollection(for album: [PhotoDetail]) {
-        let viewController = PhotoCollectionViewController()
+        let viewModel = PhotoCollectionViewModel(album: album)
+        let viewController = PhotoCollectionViewController(viewModel: viewModel, albumId: "\(album.first?.albumId ?? .zero)")
         navigationController.pushViewController(viewController, animated: true)
     }
 

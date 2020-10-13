@@ -10,11 +10,29 @@ import RxSwift
 
 final class PhotoCollectionViewController: UIViewController {
 
+    // MARK: - Typealias
+    private typealias Localizable = AlbumCollectionLocalizable
+    
     // MARK: - Private properties
     private lazy var photoCollectionView: UICollectionView = makePhotoCollectionView()
     let photoCollectionViewDelegate = PhotoCollectionViewDelegate()
     let photoCollectionDataSource = PhotoCollectionViewDataSource()
     private let disposeBag = DisposeBag()
+    
+    // MARK: - Internal properties
+    let viewModel: PhotoCollectionViewModel
+    
+    // MARK: - Initializers
+    init(viewModel: PhotoCollectionViewModel, albumId: String) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+        title = Localizable.albumTitle.formatted(argument: albumId)
+        bindToViewModel()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: - Life cycle methods
     override func viewDidLoad() {
@@ -25,8 +43,17 @@ final class PhotoCollectionViewController: UIViewController {
     
     // MARK: Private methods
     private func setupUI() {
-        title = "Album 1"
         setupCollectionViewConstraints()
+    }
+    
+    private func bindToViewModel() {
+        viewModel
+            .albumDriver
+            .drive(onNext: { [weak self] albumURLs in
+                self?.photoCollectionDataSource.set(albumURLs: albumURLs)
+                self?.photoCollectionView.reloadData()
+            })
+            .disposed(by: disposeBag)
     }
 
 }
@@ -50,7 +77,7 @@ extension PhotoCollectionViewController {
     }
 }
 
-// MARK: - Autolayour setup extension
+// MARK: - Autolayout setup extension
 extension PhotoCollectionViewController {
     private func setupCollectionViewConstraints() {
         photoCollectionView.translatesAutoresizingMaskIntoConstraints = false
