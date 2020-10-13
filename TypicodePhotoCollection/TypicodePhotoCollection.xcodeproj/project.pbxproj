@@ -16,6 +16,10 @@
 		AC25F02D25353B2A0032B82F /* PhotoCollectionConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC25F02C25353B2A0032B82F /* PhotoCollectionConstants.swift */; };
 		AC25F039253548300032B82F /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC25F038253548300032B82F /* UIView+Extensions.swift */; };
 		AC25F04525354FDE0032B82F /* PhotoCollectionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC25F04425354FDE0032B82F /* PhotoCollectionProtocols.swift */; };
+		AC25F07C253576430032B82F /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC25F07B253576430032B82F /* PhotoDetailViewController.swift */; };
+		AC25F0892535779D0032B82F /* PhotoDetailViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC25F0882535779D0032B82F /* PhotoDetailViewDataSource.swift */; };
+		AC25F08E253577D10032B82F /* PhotoDetailViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC25F08D253577D10032B82F /* PhotoDetailViewDelegate.swift */; };
+		AC25F094253578DE0032B82F /* PhotoDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC25F093253578DE0032B82F /* PhotoDetailViewModel.swift */; };
 		AC3B0BD925342D9F0059DAED /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AC3B0BDB25342D9F0059DAED /* Localizable.strings */; };
 		AC3B0BE025342E7E0059DAED /* AlbumCollectionLocalizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3B0BDF25342E7E0059DAED /* AlbumCollectionLocalizable.swift */; };
 		AC3D83DE253374430050A995 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D83DD253374430050A995 /* AppDelegate.swift */; };
@@ -72,6 +76,10 @@
 		AC25F02C25353B2A0032B82F /* PhotoCollectionConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionConstants.swift; sourceTree = "<group>"; };
 		AC25F038253548300032B82F /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		AC25F04425354FDE0032B82F /* PhotoCollectionProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionProtocols.swift; sourceTree = "<group>"; };
+		AC25F07B253576430032B82F /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		AC25F0882535779D0032B82F /* PhotoDetailViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewDataSource.swift; sourceTree = "<group>"; };
+		AC25F08D253577D10032B82F /* PhotoDetailViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewDelegate.swift; sourceTree = "<group>"; };
+		AC25F093253578DE0032B82F /* PhotoDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewModel.swift; sourceTree = "<group>"; };
 		AC3B0BDA25342D9F0059DAED /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AC3B0BDF25342E7E0059DAED /* AlbumCollectionLocalizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionLocalizable.swift; sourceTree = "<group>"; };
 		AC3D83DA253374430050A995 /* TypicodePhotoCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TypicodePhotoCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -226,6 +234,57 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		AC25F07A253576220032B82F /* PhotoDetail */ = {
+			isa = PBXGroup;
+			children = (
+				AC25F092253578D40032B82F /* ViewModel */,
+				AC25F080253576F00032B82F /* View */,
+			);
+			path = PhotoDetail;
+			sourceTree = "<group>";
+		};
+		AC25F080253576F00032B82F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AC25F087253577850032B82F /* Controllers */,
+				AC25F085253577770032B82F /* Delegates */,
+				AC25F0842535776F0032B82F /* DataSources */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AC25F0842535776F0032B82F /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				AC25F0882535779D0032B82F /* PhotoDetailViewDataSource.swift */,
+			);
+			path = DataSources;
+			sourceTree = "<group>";
+		};
+		AC25F085253577770032B82F /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				AC25F08D253577D10032B82F /* PhotoDetailViewDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		AC25F087253577850032B82F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AC25F07B253576430032B82F /* PhotoDetailViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		AC25F092253578D40032B82F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AC25F093253578DE0032B82F /* PhotoDetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		AC3D83D1253374430050A995 = {
 			isa = PBXGroup;
 			children = (
@@ -365,6 +424,7 @@
 				AC3D84602533894A0050A995 /* RemoteAPIClient */,
 				AC3D84352533825E0050A995 /* AlbumCollection */,
 				AC25EFF925352E280032B82F /* PhotoCollection */,
+				AC25F07A253576220032B82F /* PhotoDetail */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -605,6 +665,7 @@
 			files = (
 				AC25F019253539730032B82F /* PhotoCollectionViewDelegate.swift in Sources */,
 				AC25F021253539850032B82F /* PhotoCollectionViewDataSource.swift in Sources */,
+				AC25F08E253577D10032B82F /* PhotoDetailViewDelegate.swift in Sources */,
 				AC25F008253538FB0032B82F /* PhotoCollectionViewModel.swift in Sources */,
 				AC3D83DE253374430050A995 /* AppDelegate.swift in Sources */,
 				AC3B0BE025342E7E0059DAED /* AlbumCollectionLocalizable.swift in Sources */,
@@ -628,8 +689,11 @@
 				AC3D850D2534289C0050A995 /* AlbumCollectionConstants.swift in Sources */,
 				AC3D84EB2533FFC50050A995 /* AlbumCollectionViewDelegate.swift in Sources */,
 				AC3D84A22533B8760050A995 /* AlbumColletionRemoteApiClientProtocol.swift in Sources */,
+				AC25F0892535779D0032B82F /* PhotoDetailViewDataSource.swift in Sources */,
 				AC3D8454253384B90050A995 /* AlbumCollectionViewModelProtocol.swift in Sources */,
+				AC25F07C253576430032B82F /* PhotoDetailViewController.swift in Sources */,
 				AC3D84F525340DEB0050A995 /* AlbumCollectionViewDataSource.swift in Sources */,
+				AC25F094253578DE0032B82F /* PhotoDetailViewModel.swift in Sources */,
 				AC25EFFB25352E560032B82F /* PhotoCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
