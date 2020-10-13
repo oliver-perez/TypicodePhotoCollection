@@ -19,9 +19,9 @@ final class AlbumCollectionViewController: UIViewController {
     
     // MARK: - Private properties
     private let disposeBag = DisposeBag()
-    private lazy var albumsCollectionView: AlbumCollectionView = makeAlbumsCollectionView()
-    let albumsCollectionViewDelegate = AlbumCollectionViewDelegate()
-    let albumsCollectionDataSource = AlbumCollectionViewDataSource()
+    private lazy var albumsCollectionView: UICollectionView = makeAlbumsCollectionView()
+    private let albumsCollectionViewDelegate = AlbumCollectionViewDelegate()
+    private let albumsCollectionDataSource = AlbumCollectionViewDataSource()
     
     // MARK: - Initializers
     init(viewModel: AlbumCollectionViewModelProtocol) {
@@ -42,7 +42,6 @@ final class AlbumCollectionViewController: UIViewController {
     }
     
     // MARK: Private methods
-    
     private func setupUI() {
         title = Localizable.albumViewControllerTitle.localized
         setupAlbumCollectionViewConstraints()
@@ -85,9 +84,9 @@ final class AlbumCollectionViewController: UIViewController {
 
 // MARK: - AlbumCollectionViewController view factory methods extension
 extension AlbumCollectionViewController {
-    private func makeAlbumsCollectionView() -> AlbumCollectionView {
-        let layout = UICollectionViewFlowLayout()
-        let collectionView = AlbumCollectionView(layout: layout)
+    private func makeAlbumsCollectionView() -> UICollectionView {
+        let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout())
+        collectionView.backgroundColor = .white
         collectionView.delegate = albumsCollectionViewDelegate
         collectionView.dataSource = albumsCollectionDataSource
         collectionView.register(AlbumCollectionViewCell.self, forCellWithReuseIdentifier: String(describing: AlbumCollectionViewCell.self))
@@ -101,6 +100,7 @@ extension AlbumCollectionViewController {
     }
 }
 
+// MARK: - Autolayour setup extension
 extension AlbumCollectionViewController {
     private func setupAlbumCollectionViewConstraints() {
         albumsCollectionView.translatesAutoresizingMaskIntoConstraints = false

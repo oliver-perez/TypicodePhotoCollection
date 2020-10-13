@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		5C047862224A2EFDEB6DEDDF /* Pods_TypicodePhotoCollection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2256A75124384FA33DEC0F10 /* Pods_TypicodePhotoCollection.framework */; };
 		AC25EFFB25352E560032B82F /* PhotoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC25EFFA25352E560032B82F /* PhotoCollectionViewController.swift */; };
+		AC25F008253538FB0032B82F /* PhotoCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC25F007253538FB0032B82F /* PhotoCollectionViewModel.swift */; };
+		AC25F019253539730032B82F /* PhotoCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC25F018253539730032B82F /* PhotoCollectionViewDelegate.swift */; };
+		AC25F021253539850032B82F /* PhotoCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC25F020253539850032B82F /* PhotoCollectionViewDataSource.swift */; };
+		AC25F027253539E40032B82F /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC25F026253539E40032B82F /* PhotoCell.swift */; };
+		AC25F02D25353B2A0032B82F /* PhotoCollectionConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC25F02C25353B2A0032B82F /* PhotoCollectionConstants.swift */; };
 		AC3B0BD925342D9F0059DAED /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AC3B0BDB25342D9F0059DAED /* Localizable.strings */; };
 		AC3B0BE025342E7E0059DAED /* AlbumCollectionLocalizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3B0BDF25342E7E0059DAED /* AlbumCollectionLocalizable.swift */; };
 		AC3D83DE253374430050A995 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D83DD253374430050A995 /* AppDelegate.swift */; };
@@ -30,7 +35,6 @@
 		AC3D84902533A1530050A995 /* AlbumColletionRemoteEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D848F2533A1530050A995 /* AlbumColletionRemoteEndpoint.swift */; };
 		AC3D84952533B5320050A995 /* PhotoCollectionsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D84942533B5320050A995 /* PhotoCollectionsState.swift */; };
 		AC3D84A22533B8760050A995 /* AlbumColletionRemoteApiClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D84A12533B8760050A995 /* AlbumColletionRemoteApiClientProtocol.swift */; };
-		AC3D84A82533B8C90050A995 /* AlbumCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D84A72533B8C90050A995 /* AlbumCollectionView.swift */; };
 		AC3D84B52533C3000050A995 /* AlbumCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D84B42533C3000050A995 /* AlbumCollectionViewCell.swift */; };
 		AC3D84EB2533FFC50050A995 /* AlbumCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D84EA2533FFC50050A995 /* AlbumCollectionViewDelegate.swift */; };
 		AC3D84F525340DEB0050A995 /* AlbumCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D84F425340DEB0050A995 /* AlbumCollectionViewDataSource.swift */; };
@@ -59,6 +63,11 @@
 		2256A75124384FA33DEC0F10 /* Pods_TypicodePhotoCollection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TypicodePhotoCollection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7656737B97CAB9217960EF6D /* Pods-TypicodePhotoCollection.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TypicodePhotoCollection.release.xcconfig"; path = "Target Support Files/Pods-TypicodePhotoCollection/Pods-TypicodePhotoCollection.release.xcconfig"; sourceTree = "<group>"; };
 		AC25EFFA25352E560032B82F /* PhotoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewController.swift; sourceTree = "<group>"; };
+		AC25F007253538FB0032B82F /* PhotoCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewModel.swift; sourceTree = "<group>"; };
+		AC25F018253539730032B82F /* PhotoCollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewDelegate.swift; sourceTree = "<group>"; };
+		AC25F020253539850032B82F /* PhotoCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewDataSource.swift; sourceTree = "<group>"; };
+		AC25F026253539E40032B82F /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		AC25F02C25353B2A0032B82F /* PhotoCollectionConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionConstants.swift; sourceTree = "<group>"; };
 		AC3B0BDA25342D9F0059DAED /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AC3B0BDF25342E7E0059DAED /* AlbumCollectionLocalizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionLocalizable.swift; sourceTree = "<group>"; };
 		AC3D83DA253374430050A995 /* TypicodePhotoCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TypicodePhotoCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,7 +96,6 @@
 		AC3D848F2533A1530050A995 /* AlbumColletionRemoteEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumColletionRemoteEndpoint.swift; sourceTree = "<group>"; };
 		AC3D84942533B5320050A995 /* PhotoCollectionsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionsState.swift; sourceTree = "<group>"; };
 		AC3D84A12533B8760050A995 /* AlbumColletionRemoteApiClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumColletionRemoteApiClientProtocol.swift; sourceTree = "<group>"; };
-		AC3D84A72533B8C90050A995 /* AlbumCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionView.swift; sourceTree = "<group>"; };
 		AC3D84B42533C3000050A995 /* AlbumCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewCell.swift; sourceTree = "<group>"; };
 		AC3D84EA2533FFC50050A995 /* AlbumCollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewDelegate.swift; sourceTree = "<group>"; };
 		AC3D84F425340DEB0050A995 /* AlbumCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewDataSource.swift; sourceTree = "<group>"; };
@@ -131,9 +139,70 @@
 		AC25EFF925352E280032B82F /* PhotoCollection */ = {
 			isa = PBXGroup;
 			children = (
-				AC25EFFA25352E560032B82F /* PhotoCollectionViewController.swift */,
+				AC25F02B25353B100032B82F /* Constants */,
+				AC25F006253538E20032B82F /* ViewModel */,
+				AC25F005253538D80032B82F /* View */,
 			);
 			path = PhotoCollection;
+			sourceTree = "<group>";
+		};
+		AC25F005253538D80032B82F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AC25F025253539C30032B82F /* Cells */,
+				AC25F0172535393E0032B82F /* Delegates */,
+				AC25F016253539270032B82F /* Controllers */,
+				AC25F015253539170032B82F /* DataSources */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AC25F006253538E20032B82F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AC25F007253538FB0032B82F /* PhotoCollectionViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AC25F015253539170032B82F /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				AC25F020253539850032B82F /* PhotoCollectionViewDataSource.swift */,
+			);
+			path = DataSources;
+			sourceTree = "<group>";
+		};
+		AC25F016253539270032B82F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AC25EFFA25352E560032B82F /* PhotoCollectionViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		AC25F0172535393E0032B82F /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				AC25F018253539730032B82F /* PhotoCollectionViewDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		AC25F025253539C30032B82F /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				AC25F026253539E40032B82F /* PhotoCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		AC25F02B25353B100032B82F /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				AC25F02C25353B2A0032B82F /* PhotoCollectionConstants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		AC3D83D1253374430050A995 = {
@@ -227,7 +296,6 @@
 				AC3D84F225340DCB0050A995 /* DataSources */,
 				AC3D84E92533FF9F0050A995 /* Delegates */,
 				AC3D84B02533B8FF0050A995 /* Controllers */,
-				AC3D84A62533B89F0050A995 /* CustomViews */,
 				AC3D84AF2533B8F40050A995 /* Cells */,
 			);
 			path = View;
@@ -287,14 +355,6 @@
 				AC3D848F2533A1530050A995 /* AlbumColletionRemoteEndpoint.swift */,
 			);
 			path = RemoteApiClient;
-			sourceTree = "<group>";
-		};
-		AC3D84A62533B89F0050A995 /* CustomViews */ = {
-			isa = PBXGroup;
-			children = (
-				AC3D84A72533B8C90050A995 /* AlbumCollectionView.swift */,
-			);
-			path = CustomViews;
 			sourceTree = "<group>";
 		};
 		AC3D84AF2533B8F40050A995 /* Cells */ = {
@@ -521,9 +581,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC25F019253539730032B82F /* PhotoCollectionViewDelegate.swift in Sources */,
+				AC25F021253539850032B82F /* PhotoCollectionViewDataSource.swift in Sources */,
+				AC25F008253538FB0032B82F /* PhotoCollectionViewModel.swift in Sources */,
 				AC3D83DE253374430050A995 /* AppDelegate.swift in Sources */,
 				AC3B0BE025342E7E0059DAED /* AlbumCollectionLocalizable.swift in Sources */,
 				AC3D847025338B200050A995 /* RemoteApiError.swift in Sources */,
+				AC25F027253539E40032B82F /* PhotoCell.swift in Sources */,
+				AC25F02D25353B2A0032B82F /* PhotoCollectionConstants.swift in Sources */,
 				AC3D8428253379140050A995 /* MainCoordinator.swift in Sources */,
 				AC3D846B25338ACE0050A995 /* RemoteEndpoint.swift in Sources */,
 				AC3D84372533828A0050A995 /* AlbumCollectionViewController.swift in Sources */,
@@ -535,7 +600,6 @@
 				AC3D84902533A1530050A995 /* AlbumColletionRemoteEndpoint.swift in Sources */,
 				AC3D8443253382D80050A995 /* AlbumCollectionViewModel.swift in Sources */,
 				AC3D847925338ECE0050A995 /* AlbumColletionRemoteApiClient.swift in Sources */,
-				AC3D84A82533B8C90050A995 /* AlbumCollectionView.swift in Sources */,
 				AC3D84952533B5320050A995 /* PhotoCollectionsState.swift in Sources */,
 				AC3D850D2534289C0050A995 /* AlbumCollectionConstants.swift in Sources */,
 				AC3D84EB2533FFC50050A995 /* AlbumCollectionViewDelegate.swift in Sources */,
