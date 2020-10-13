@@ -80,7 +80,13 @@ final class AlbumCollectionViewController: UIViewController {
     }
     
     private func handleErrorState(with description: String) {
-        // TODO: Show error alert
+        stopLoadingAnimation()
+        let alert = UIAlertController(title: "Something went wrong", message: nil, preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "Retry", style: .default, handler: { [weak self] _ in
+            self?.viewModel.viewLoadWithError()
+        })
+        alert.addAction(alertAction)
+        present(alert, animated: true, completion: nil)
     }
     
     private func playLoadingAnimation() {
