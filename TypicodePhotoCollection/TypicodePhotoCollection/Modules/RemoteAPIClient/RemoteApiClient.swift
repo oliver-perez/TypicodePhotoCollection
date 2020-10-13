@@ -11,10 +11,10 @@ import RxSwift
 // MARK: - RemoteApiClient
 protocol RemoteApiClient {
     // MARK: - Properties
-    var urlSession: URLSession { get set }
+    var urlSession: URLSessionProtocol { get set }
     
     // MARK: - Initializers
-    init(urlSession: URLSession)
+    init(urlSession: URLSessionProtocol)
     
     // MARK: - Methods
     func executeDataTaskRequest(from url: URL?, completion: @escaping (Result<Data, Error>) -> Void)
@@ -43,3 +43,11 @@ extension RemoteApiClient {
         return endpoint.baseURL?.appendingPathComponent(path)
     }
 }
+
+// MARK: - URLSessionProtocol
+/// Protocol to decople from concrete URLSession type
+protocol URLSessionProtocol {
+    func dataTask (with url: URL, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask
+}
+
+extension URLSession: URLSessionProtocol {}
