@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxSwift
 
 final class MainCoordinator {
 
@@ -14,6 +15,7 @@ final class MainCoordinator {
 
     // MARK: - Private properties
     private var window = UIWindow(frame: UIScreen.main.bounds)
+    private let disposeBag = DisposeBag()
 
     func start(windowScene: UIWindowScene) {
         window.rootViewController = self.navigationController
@@ -29,7 +31,19 @@ final class MainCoordinator {
     func showAlbumCollectionViewController() {
         let viewModel = AlbumCollectionViewModel(remoteApiClient: AlbumColletionRemoteApiClient())
         let viewController = AlbumCollectionViewController(viewModel: viewModel)
+        
+        viewModel.albumSelected
+            .subscribe(onNext: { [weak self] album in
+                self?.showPhotoCollection(for: album)
+            })
+            .disposed(by: disposeBag)
+        
         navigationController.pushViewController(viewController, animated: false)
+    }
+    
+    func showPhotoCollection(for album: [PhotoDetail]) {
+        let viewController = PhotoCollectionViewController()
+        navigationController.pushViewController(viewController, animated: true)
     }
 
 }

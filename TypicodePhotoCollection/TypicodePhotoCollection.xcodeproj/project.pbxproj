@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5C047862224A2EFDEB6DEDDF /* Pods_TypicodePhotoCollection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2256A75124384FA33DEC0F10 /* Pods_TypicodePhotoCollection.framework */; };
+		AC25EFFB25352E560032B82F /* PhotoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC25EFFA25352E560032B82F /* PhotoCollectionViewController.swift */; };
 		AC3B0BD925342D9F0059DAED /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AC3B0BDB25342D9F0059DAED /* Localizable.strings */; };
 		AC3B0BE025342E7E0059DAED /* AlbumCollectionLocalizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3B0BDF25342E7E0059DAED /* AlbumCollectionLocalizable.swift */; };
 		AC3D83DE253374430050A995 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D83DD253374430050A995 /* AppDelegate.swift */; };
@@ -57,6 +58,7 @@
 		033835BEBB9FAAE07C5A885B /* Pods-TypicodePhotoCollection.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TypicodePhotoCollection.debug.xcconfig"; path = "Target Support Files/Pods-TypicodePhotoCollection/Pods-TypicodePhotoCollection.debug.xcconfig"; sourceTree = "<group>"; };
 		2256A75124384FA33DEC0F10 /* Pods_TypicodePhotoCollection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TypicodePhotoCollection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7656737B97CAB9217960EF6D /* Pods-TypicodePhotoCollection.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TypicodePhotoCollection.release.xcconfig"; path = "Target Support Files/Pods-TypicodePhotoCollection/Pods-TypicodePhotoCollection.release.xcconfig"; sourceTree = "<group>"; };
+		AC25EFFA25352E560032B82F /* PhotoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewController.swift; sourceTree = "<group>"; };
 		AC3B0BDA25342D9F0059DAED /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AC3B0BDF25342E7E0059DAED /* AlbumCollectionLocalizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionLocalizable.swift; sourceTree = "<group>"; };
 		AC3D83DA253374430050A995 /* TypicodePhotoCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TypicodePhotoCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,6 +126,14 @@
 				2256A75124384FA33DEC0F10 /* Pods_TypicodePhotoCollection.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AC25EFF925352E280032B82F /* PhotoCollection */ = {
+			isa = PBXGroup;
+			children = (
+				AC25EFFA25352E560032B82F /* PhotoCollectionViewController.swift */,
+			);
+			path = PhotoCollection;
 			sourceTree = "<group>";
 		};
 		AC3D83D1253374430050A995 = {
@@ -264,6 +274,7 @@
 				AC3D841E253378750050A995 /* MainCoordinator */,
 				AC3D84602533894A0050A995 /* RemoteAPIClient */,
 				AC3D84352533825E0050A995 /* AlbumCollection */,
+				AC25EFF925352E280032B82F /* PhotoCollection */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -531,6 +542,7 @@
 				AC3D84A22533B8760050A995 /* AlbumColletionRemoteApiClientProtocol.swift in Sources */,
 				AC3D8454253384B90050A995 /* AlbumCollectionViewModelProtocol.swift in Sources */,
 				AC3D84F525340DEB0050A995 /* AlbumCollectionViewDataSource.swift in Sources */,
+				AC25EFFB25352E560032B82F /* PhotoCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
