@@ -41,6 +41,10 @@ final class AlbumCollectionViewModel: AlbumCollectionViewModelProtocol {
         getPhotoColletion()
     }
     
+    func viewLoadWithError() {
+        getPhotoColletion()
+    }
+    
     func didSelectAlbum(at index: Int) {
         guard photoAlbums.keys.count > index else { return }
         let albumId = photoAlbums.keys.sorted()[index]
