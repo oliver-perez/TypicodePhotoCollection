@@ -5,4 +5,5 @@ target 'TypicodePhotoCollection' do
   pod 'RxCocoa', '~> 5.1'
   pod 'Kingfisher', '~> 5.15'
   pod 'SwiftLint'
+  pod 'lottie-ios'
 end

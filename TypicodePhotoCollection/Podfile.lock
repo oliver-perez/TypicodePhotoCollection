@@ -2,6 +2,7 @@ PODS:
   - Kingfisher (5.15.6):
     - Kingfisher/Core (= 5.15.6)
   - Kingfisher/Core (5.15.6)
+  - lottie-ios (3.1.8)
   - RxCocoa (5.1.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
@@ -12,6 +13,7 @@ PODS:
 
 DEPENDENCIES:
   - Kingfisher (~> 5.15)
+  - lottie-ios
   - RxCocoa (~> 5.1)
   - RxSwift (~> 5.1)
   - SwiftLint
@@ -19,6 +21,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Kingfisher
+    - lottie-ios
     - RxCocoa
     - RxRelay
     - RxSwift
@@ -26,11 +29,12 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Kingfisher: b3554e7bf6106115b44e8795300bad580ef2fdc7
+  lottie-ios: 48fac6be217c76937e36e340e2d09cf7b10b7f5f
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   SwiftLint: dfd554ff0dff17288ee574814ccdd5cea85d76f7
 
-PODFILE CHECKSUM: eeccb3e8d16fb316e47ded44883f27c1d0a9de90
+PODFILE CHECKSUM: 7f508dbc8118670bfcd39fa5e7a1d187a03a8ba9
 
 COCOAPODS: 1.9.3
